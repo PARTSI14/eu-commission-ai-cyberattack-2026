@@ -1,0 +1,124 @@
+{
+  "name": "European Commission AI-assisted cyberattack (Oct-Nov 2026)",
+  "versions": {
+    "attack": "20",
+    "navigator": "5.0.0",
+    "layer": "4.5"
+  },
+  "domain": "enterprise-attack",
+  "description": "Red = confirmed by the Commission; orange = reported or assessed highly likely (CERT-EU, Politico); yellow = hypotheses based on ARTEX techniques in other campaigns (FBI FLASH, 13 Nov 2026), not confirmed for the Commission. ATT&CK Enterprise v20.1.",
+  "sorting": 0,
+  "layout": {
+    "layout": "side",
+    "showName": true,
+    "showID": true,
+    "showAggregateScores": false,
+    "countUnscored": false,
+    "expandedSubtechniques": "annotated"
+  },
+  "hideDisabled": false,
+  "techniques": [
+    {
+      "techniqueID": "T1588.007",
+      "tactic": "resource-development",
+      "color": "#e60d0d",
+      "comment": "Confirmed: Commission says the campaign was AI-generated, using a publicly available AI tool.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1588.002",
+      "tactic": "resource-development",
+      "color": "#fc9f3a",
+      "comment": "Highly likely: ARTEX, an open-source AI penetration-testing framework (CERT-EU, Politico).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1595.002",
+      "tactic": "reconnaissance",
+      "color": "#fc9f3a",
+      "comment": "Reported: ARTEX used to scan Commission systems for weaknesses (Politico sources).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1190",
+      "tactic": "initial-access",
+      "color": "#fce93a",
+      "comment": "Hypothesis: ARTEX campaigns exploit internet-facing apps such as employee portals (FBI).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1078.004",
+      "tactic": "initial-access",
+      "color": "#fce93a",
+      "comment": "Hypothesis: abuse of cloud/app identities, as in the ConnectWise/M365 ARTEX campaign (FBI).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1110.003",
+      "tactic": "credential-access",
+      "color": "#fce93a",
+      "comment": "Hypothesis: password spraying seen in ARTEX campaigns (FBI).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1505.003",
+      "tactic": "persistence",
+      "color": "#fce93a",
+      "comment": "Hypothesis: web shells deployed by ARTEX agents in other campaigns (FBI).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1068",
+      "tactic": "privilege-escalation",
+      "color": "#fce93a",
+      "comment": "Hypothesis: ARTEX automates privilege escalation; under 3 hours to privileged access in some cases (FBI).",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1213",
+      "tactic": "collection",
+      "color": "#fce93a",
+      "comment": "Open question: whether HR data in Sysper (names, grades, addresses) was accessed.",
+      "enabled": true,
+      "showSubtechniques": true
+    },
+    {
+      "techniqueID": "T1041",
+      "tactic": "exfiltration",
+      "color": "#fce93a",
+      "comment": "Open question: no confirmed data theft; Commission says no evidence of a breach affecting staff as a whole.",
+      "enabled": true,
+      "showSubtechniques": true
+    }
+  ],
+  "gradient": {
+    "colors": [
+      "#ffffff",
+      "#e60d0d"
+    ],
+    "minValue": 0,
+    "maxValue": 1
+  },
+  "legendItems": [
+    {
+      "label": "Confirmed",
+      "color": "#e60d0d"
+    },
+    {
+      "label": "Reported / highly likely",
+      "color": "#fc9f3a"
+    },
+    {
+      "label": "Hypothesis (from ARTEX campaigns)",
+      "color": "#fce93a"
+    }
+  ]
+}
